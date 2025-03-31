@@ -70,3 +70,13 @@ sns.lineplot(data=df_monthly_revenue, x="MONTH", y="Monthly_Revenue", marker="o"
 plt.title("Receita Mensal")
 plt.xticks(rotation=45)
 plt.show()
+
+plt.figure(figsize=(8, 8))
+plt.pie(df_payment_methods["Transactions"], labels=df_payment_methods["Payment Method"], autopct="%1.1f%%",startangle=90,
+        colors=sns.color_palette("viridis", len(df_payment_methods)))
+centre_circle = plt.Circle((0,0),0.70,fc="white")
+fig = plt.gcf()
+fig.gca().add_artist(centre_circle)
+plt.title("Distribuição de Métodos de Pagamento", fontsize=14)
+plt.tight_layout()
+plt.show()
